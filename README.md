@@ -1,1 +1,1 @@
-I have no idea what I'm doing.
+This repository is for notes and little projects I am working on while learning Python.
