@@ -1,6 +1,6 @@
-
+#initializing variables
 password = ""  #this will be our end result
-uppernum = 1   #initializing variables (number of upper case characters required for the password)
+uppernum = 1    #number of upper case characters required for the password
 lowernum = 1   #number of lower case characters required for the password
 numbernum = 1   #number of numbers required for the password
 character = 1   #number of special characters required
