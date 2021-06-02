@@ -26,7 +26,7 @@ def character_picker(cycles, the_set):
     """cycles = (uppernum, lowernum, etc.) the_set = (lowerset, upperset, etc.)"""
     picker = ""
     while cycles != 0:
-        randominrange = random.randint(0, len(the_set)-1) #convert to function "lowerset" will become unique argument
+        randominrange = random.randint(0, len(the_set)-1)
         picker += the_set[randominrange]
         cycles -= 1
     return picker
