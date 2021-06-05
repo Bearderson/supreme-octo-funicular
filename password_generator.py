@@ -36,6 +36,7 @@ password += character_picker(uppernum, upperset)
 password += character_picker(numbernum, numberset)
 password += character_picker(character, characterset)
 password += character_picker(leftovers, monty)
+<<<<<<< HEAD
 
 def scrambler(password):
     """Takes a random index of the password string and moves it to another random index."""
@@ -51,3 +52,6 @@ def scrambler(password):
 
 password = scrambler(password)
 print(f"Here is your password: {password}")
+=======
+print(f"Here is your password: {password}")
+>>>>>>> 854c770b8a583bf7fd7aa3910fb9f06874c901e9
