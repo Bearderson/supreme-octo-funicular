@@ -19,8 +19,8 @@ characterset = "!@#$%^&*"
 monty = lowerset + upperset + numberset + characterset #this will create a big string of all characters to pull leftovers from
 
 #leftovers will be used to randomly generate extra characters to create a full password. "filler characters"
-#reducing maximum characters by the amount of mandatory characters
-leftovers = maximumamount - character - numbernum - lowernum - uppernum
+#reducing the range of characters by the amount of mandatory characters
+leftovers = random.randint((minimumamount - character - numbernum - lowernum - uppernum), (maximumamount - character - numbernum - lowernum - uppernum))
 
 def character_picker(cycles, the_set):
     """cycles = (uppernum, lowernum, etc.) the_set = (lowerset, upperset, etc.)"""
@@ -36,4 +36,18 @@ password += character_picker(uppernum, upperset)
 password += character_picker(numbernum, numberset)
 password += character_picker(character, characterset)
 password += character_picker(leftovers, monty)
+
+def scrambler(password):
+    """Takes a random index of the password string and moves it to another random index."""
+    scramble_cycles = 0
+    while scramble_cycles != 1000:    #Sets the amount of times characters will be moved
+        scramble_cycles += 1
+        randomstart = random.randint(0, len(password)-1)   #picks which character (index) will be removed
+        randomend = random.randint(0, len(password)-1)    #picks index that the character will be inserted at
+        letter = password[randomstart]      #saves characted being moved
+        password = password[:randomstart] + password[randomstart+1:]    #removes picked letter from password
+        password = password[:randomend] + letter + password[randomend:]    #inserts character at new index
+    return password
+
+password = scrambler(password)
 print(f"Here is your password: {password}")
