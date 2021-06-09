@@ -5,7 +5,7 @@
 
 import re
 
-filename = 'sampleOrder.xml'
+filename = 'text_files/sampleOrder.xml'
 name = ""
 address = ""
 products = ""
