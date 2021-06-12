@@ -1,4 +1,5 @@
 import random  #BecAuSE We NEED RandOMnESs In oUR PaSsWOrDs
+import sys
 
 #initializing variables 
 uppernum = 1    #number of upper case characters required for the password
@@ -17,6 +18,26 @@ upperset = lowerset.upper()
 numberset = "0123456789"
 characterset = "!@#$%^&*"
 monty = lowerset + upperset + numberset + characterset #this will create a big string of all characters to pull leftovers from
+user_input = ''
+def user_proof(user_input):
+    if user_input == 'q':
+        exit()
+    try:
+        val = int(user_input)
+    except ValueError:
+        print("You did not enter a number.")
+
+print("Welcome to the Password Generator.\nEnter 'q' at any time to quit.")
+minimumamount = input("What is the minimum amount of characters for your password?")
+user_proof(minimumamount)
+maximumamount = input("What is the maximum amount of characters for your password?")
+user_proof(maximumamount)
+uppernum = input("How many upper case letters does your password need?")
+user_proof(uppernum)
+uppernum = input("How many lower case letters does your password need?")
+user_proof(lowernum)
+numbernum = input("How many numbers does your password need?")
+user_proof(numbernum)
 
 #leftovers will be used to randomly generate extra characters to create a full password. "filler characters"
 #reducing the range of characters by the amount of mandatory characters
