@@ -1,8 +1,7 @@
-def data_snatcher(the_file, startstring, endstring):
-    for line in the_file:
-        if '<Name>' in line:
-            get_start = re.search(r'(<Name>)', line)
-            get_start = get_start.end()
-            get_end = re.search(r'(</Name>)', line)
-            get_end = get_end.start()
-            print(line[get_start:get_end])
+import xml.etree.ElementTree as ET
+
+filename = 'text_files/sampleOrder.xml'
+
+parsed_file = ET.parse(filename)
+for line in parsed_file:
+    print(line)
